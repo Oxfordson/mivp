@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Motomedia Brand Colors extracted from MMRS Interface */
+  --moto-red: #E60000;       /* Active states, progress bars, accents */
+  --moto-black: #111111;     /* Sidebar, dark panels, primary text */
+  --moto-dark-gray: #1C1C1C; /* Dark card backgrounds */
+  --moto-white: #FFFFFF;     /* Light cards, text on dark backgrounds */
+  --moto-bg-light: #F8F9FA;  /* Main application background */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--moto-bg-light);
+  color: var(--moto-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Custom utility classes for the Motomedia brand */
+.bg-moto-red { background-color: var(--moto-red); }
+.text-moto-red { color: var(--moto-red); }
+.bg-moto-black { background-color: var(--moto-black); }
+.text-moto-black { color: var(--moto-black); }

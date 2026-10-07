@@ -2,8 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import DepartmentTurnoutBarChart from '@/components/analytics/DepartmentTurnoutBarChart';
 import { DepartmentTurnoutView, VoteTallyView } from '@/types/database.types';
 
+// Force dynamic rendering to bypass static prerendering errors with async Supabase calls
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
-  // FIX: Await the async createClient function
+  // Await the async createClient function
   const supabase = await createClient();
 
   // 1. Fetch current active events
